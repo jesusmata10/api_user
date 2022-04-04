@@ -37,17 +37,14 @@ class User extends Authenticatable
     public static function consulta($email)
     {
         return DB::table('users')
-        ->select('id', 'name', 'email','password')
-        ->where('email', '=', $email)
-        ->first();
+            ->select('id', 'name', 'email', 'password')
+            ->where('email', '=', $email)
+            ->first();
     }
 
     public static function consulta2($email)
     {
-        
         $user = User::where("email", "=", $email)->first();
-
         return $user;
-        
     }
 }
